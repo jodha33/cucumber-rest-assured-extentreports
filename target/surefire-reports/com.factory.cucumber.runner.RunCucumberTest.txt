@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: com.factory.cucumber.runner.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 3, Errors: 6, Skipped: 2, Time elapsed: 2.865 s <<< FAILURE! - in com.factory.cucumber.runner.RunCucumberTest
+When I hit the API with requestbody "" and request method is "GET"(| Demo test | /api/users?page=2 | application/json |  | GET | 200 |)  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+
+| Demo test | /api/users?page=2 | application/json |  | GET | 200 |  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+
+| Demo test | /api/users?page=2 | application/json |  | GET | 200 |  Time elapsed: 0.028 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<200>
+
+When I hit the API with requestbody "" and request method is "GET"(| application/json |  | GET |)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+
+| application/json |  | GET |  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+
+| application/json |  | GET |  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<200>
+
+When I hit the API with requestbody "" and request method is "GET"(| Demo test | /api/users?page=2 | application/json |  | GET | 200 |)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+
+| Demo test | /api/users?page=2 | application/json |  | GET | 200 |  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+
+| Demo test | /api/users?page=2 | application/json |  | GET | 200 |  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<200>
+

@@ -39,6 +39,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
 		</ul>
@@ -53,7 +54,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Mar 1, 2020 02:28:15 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Dec 10, 2020 08:25:09 PM</span>
 				</a>
 			</li>
 			<li>
@@ -79,6 +80,8 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -93,7 +96,7 @@
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@get</a></li>
 					<li><a href='#'>@hooks</a></li>
-					<li><a href='#'>@smoke</a></li>
+					<li><a href='#'>@smokes</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -141,10 +144,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -156,10 +159,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -171,10 +174,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>10</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>5</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='30%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='20%'>2</span> others
 				</div>
 			</div>
 		</div>
@@ -188,21 +191,21 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>GET: Automated Demo Tests</span>
-						<span class='test-time'>Mar 1, 2020 02:28:15 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Dec 10, 2020 08:25:09 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 3s+323ms</span>
+<div class='scenariooutline node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 0m 0s+669ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">GET: Test the Demo app</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node scenario pass' status='pass'>
+		<li test-id='3' class='node scenario fail' status='fail'>
 			<div class='category-list'>
 				<span class='category label white-text'>@get</span>
 			</div>
@@ -222,16 +225,32 @@
 							<div class='pre'>pass :: content type is :: application/json</div>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='6' class='node when pass' status='pass'><b>When</b>
+					<li test-id='6' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When I hit the API with requestbody "" and request method is "GET"</span>
-							<div class='pre'>pass :: Request successfully processed</div>
-							<div class='pre'>Response is :: {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</div>
-							<div class='pre'>passed</div>
+							<div class='pre'><textarea>java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+	at org.codehaus.groovy.runtime.dgmimpl.NumberNumberMetaMethod.<clinit>(NumberNumberMetaMethod.java:33)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:124)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:346)
+	at java.base/java.lang.Class.newInstance(Class.java:604)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.createMetaMethodFromClass(MetaClassRegistryImpl.java:257)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.<init>(MetaClassRegistryImpl.java:110)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.<init>(MetaClassRegistryImpl.java:85)
+	at groovy.lang.GroovySystem.<clinit>(GroovySystem.java:36)
+	at org.codehaus.groovy.runtime.InvokerHelper.<clinit>(InvokerHelper.java:86)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.createMap(ScriptBytecodeAdapter.java:635)
+	at io.restassured.internal.ResponseParserRegistrar.<init>(ResponseParserRegistrar.groovy)
+	at io.restassured.RestAssured.<clinit>(RestAssured.java:346)
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(DemoFeatureGet.feature:9)
+</textarea></div>
 					</li>
-					<li test-id='7' class='node then pass' status='pass'><b>Then</b>
+					<li test-id='7' class='node then skip' status='skip'><b>Then</b>
 						<span class="bdd-step-name">Then I try to verify the status code is "200"</span>
-							<div class='pre'>pass :: Status Code is :: 200</div>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
 				</ul>
 		</li>
@@ -241,21 +260,21 @@
 				</li>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='8'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='8'>
 					<div class='test-heading'>
 						<span class='test-name'>GET: Hooks Demo</span>
-						<span class='test-time'>Mar 1, 2020 02:28:19 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Dec 10, 2020 08:25:10 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='9' status='pass'>
-	<span class='duration right label'>0h 0m 0s+158ms</span>
+<div class='scenariooutline node' test-id='9' status='fail'>
+	<span class='duration right label'>0h 0m 0s+44ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">GET: Test Hooks</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='10' class='node scenario pass' status='pass'>
+		<li test-id='10' class='node scenario fail' status='fail'>
 			<div class='category-list'>
 				<span class='category label white-text'>@hooks</span>
 			</div>
@@ -270,11 +289,12 @@
 							<div class='pre'>pass :: content type is :: application/json</div>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='12' class='node when pass' status='pass'><b>When</b>
+					<li test-id='12' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When I hit the API with requestbody "" and request method is "GET"</span>
-							<div class='pre'>pass :: Request successfully processed</div>
-							<div class='pre'>Response is :: {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</div>
-							<div class='pre'>passed</div>
+							<div class='pre'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(Hooks.feature:9)
+</pre></div>
 					</li>
 				</ul>
 		</li>
@@ -284,23 +304,23 @@
 				</li>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='13'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='13'>
 					<div class='test-heading'>
 						<span class='test-name'>GET: Tags Demo Tests</span>
-						<span class='test-time'>Mar 1, 2020 02:28:19 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Dec 10, 2020 08:25:10 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='14' status='pass'>
-	<span class='duration right label'>0h 0m 0s+196ms</span>
+<div class='scenariooutline node' test-id='14' status='fail'>
+	<span class='duration right label'>0h 0m 0s+59ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">GET: Test the Tags Demo app</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='15' class='node scenario pass' status='pass'>
+		<li test-id='15' class='node scenario fail' status='fail'>
 			<div class='category-list'>
-				<span class='category label white-text'>@smoke</span>
+				<span class='category label white-text'>@smokes</span>
 			</div>
 			
 			<b>Scenario</b>
@@ -318,16 +338,16 @@
 							<div class='pre'>pass :: content type is :: application/json</div>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='18' class='node when pass' status='pass'><b>When</b>
+					<li test-id='18' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When I hit the API with requestbody "" and request method is "GET"</span>
-							<div class='pre'>pass :: Request successfully processed</div>
-							<div class='pre'>Response is :: {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</div>
-							<div class='pre'>passed</div>
+							<div class='pre'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(TagsDemo.feature:9)
+</pre></div>
 					</li>
-					<li test-id='19' class='node then pass' status='pass'><b>Then</b>
+					<li test-id='19' class='node then skip' status='skip'><b>Then</b>
 						<span class="bdd-step-name">Then I try to verify the status code is "200"</span>
-							<div class='pre'>pass :: Status Code is :: 200</div>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
 				</ul>
 		</li>
@@ -389,13 +409,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@get</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -410,9 +430,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 1, 2020 02:28:15 AM</td>
+										<td>Dec 10, 2020 08:25:09 PM</td>
 										<td class='linked' test-id='3'>GET: Automated Demo Tests.GET: Test the Demo app.GET: Test the Demo app</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -423,13 +443,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@hooks</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -444,9 +464,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 1, 2020 02:28:19 AM</td>
+										<td>Dec 10, 2020 08:25:10 PM</td>
 										<td class='linked' test-id='10'>GET: Hooks Demo.GET: Test Hooks.GET: Test Hooks</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -455,15 +475,15 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@smoke</span>
+						<span class='category-name'>@smokes</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -478,9 +498,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 1, 2020 02:28:19 AM</td>
+										<td>Dec 10, 2020 08:25:10 PM</td>
 										<td class='linked' test-id='15'>GET: Tags Demo Tests.GET: Test the Tags Demo app.GET: Test the Tags Demo app</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -499,6 +519,102 @@
 	</div>
 </div>
 <!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.NoClassDefFoundError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>3</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Dec 10, 2020 08:25:10 PM</td>
+                                                        <td class='linked' test-id='6'>GET: Automated Demo Tests.GET: Test the Demo app.GET: Test the Demo app.When I hit the API with requestbody "" and request method is "GET"</td>
+                                                        <td><pre><textarea>java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+	at org.codehaus.groovy.runtime.dgmimpl.NumberNumberMetaMethod.<clinit>(NumberNumberMetaMethod.java:33)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:124)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:346)
+	at java.base/java.lang.Class.newInstance(Class.java:604)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.createMetaMethodFromClass(MetaClassRegistryImpl.java:257)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.<init>(MetaClassRegistryImpl.java:110)
+	at org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl.<init>(MetaClassRegistryImpl.java:85)
+	at groovy.lang.GroovySystem.<clinit>(GroovySystem.java:36)
+	at org.codehaus.groovy.runtime.InvokerHelper.<clinit>(InvokerHelper.java:86)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.createMap(ScriptBytecodeAdapter.java:635)
+	at io.restassured.internal.ResponseParserRegistrar.<init>(ResponseParserRegistrar.groovy)
+	at io.restassured.RestAssured.<clinit>(RestAssured.java:346)
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(DemoFeatureGet.feature:9)
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dec 10, 2020 08:25:10 PM</td>
+                                                        <td class='linked' test-id='12'>GET: Hooks Demo.GET: Test Hooks.GET: Test Hooks.When I hit the API with requestbody "" and request method is "GET"</td>
+                                                        <td><pre><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(Hooks.feature:9)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dec 10, 2020 08:25:10 PM</td>
+                                                        <td class='linked' test-id='18'>GET: Tags Demo Tests.GET: Test the Tags Demo app.GET: Test the Tags Demo app.When I hit the API with requestbody "" and request method is "GET"</td>
+                                                        <td><pre><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.factory.cucumber.stepdefinitions.StepDefinitionsTest.submitRequest(StepDefinitionsTest.java:59)
+	at ?.When I hit the API with requestbody "" and request method is "GET"(TagsDemo.feature:9)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -526,19 +642,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 1, 2020 02:28:15 AM</div>
+					<div class='panel-lead'>Dec 10, 2020 08:25:09 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 1, 2020 02:28:19 AM</div>
+			 		<div class='panel-lead'>Dec 10, 2020 08:25:11 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>4,000ms</div>
+					<div class='panel-lead'>1,361ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -552,7 +668,7 @@
 						</tr>
 							<tr>
 								<td>user</td>
-								<td>arjun</td>
+								<td>Jodha</td>
 							</tr>
 							<tr>
 								<td>os</td>
@@ -575,29 +691,29 @@
 						</tr>
 						<tr>
 							<td>@get</td>
+							<td>0</td>
 							<td>1</td>
 							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 						<tr>
 							<td>@hooks</td>
+							<td>0</td>
 							<td>1</td>
 							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 						<tr>
-							<td>@smoke</td>
+							<td>@smokes</td>
+							<td>0</td>
 							<td>1</td>
 							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -622,31 +738,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 3,
-				failParent: 0,
+				passParent: 0,
+				failParent: 3,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 3,
 				
-				passChild: 3,
-				failChild: 0,
+				passChild: 0,
+				failChild: 3,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 3,
 				
-				passGrandChild: 10,
-				failGrandChild: 0,
+				passGrandChild: 5,
+				failGrandChild: 3,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 2,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 5,
 			};
 		</script>
 		
